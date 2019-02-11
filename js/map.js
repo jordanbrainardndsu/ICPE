@@ -1,37 +1,31 @@
 
+var map = L.map('map').setView([0, 0], 1);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+	maxZoom: 18,
+	attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+	'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+	'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+	id: 'mapbox.light'
+}).addTo(map);
 
 
-	var map = L.map('map').setView([0, 0], 1);
+var blueIcon = L.icon({
+	iconUrl: 'images/blueuniversity.png',
 
 
-
-
-
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 18,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
-			'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox.light'
-	}).addTo(map);
-
-
-		var blueIcon = L.icon({
-    iconUrl: 'images/blueuniversity.png',
-
-
-    iconSize:     [32, 37], // size of the icon
-    iconAnchor:   [16, 37], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, -30] // point from which the popup should open relative to the iconAnchor
+	iconSize:     [32, 37], // size of the icon
+	iconAnchor:   [16, 37], // point of the icon which will correspond to marker's location
+	popupAnchor:  [0, -30] // point from which the popup should open relative to the iconAnchor
 });
 
-	var redIcon = L.icon({
-    iconUrl: 'images/reduniversity.png',
+var redIcon = L.icon({
+	iconUrl: 'images/reduniversity.png',
 
 
-    iconSize:     [32, 37], // size of the icon
-    iconAnchor:   [16, 37], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
+	iconSize:     [32, 37], // size of the icon
+	iconAnchor:   [16, 37], // point of the icon which will correspond to marker's location
+	popupAnchor:  [0, -40] // point from which the popup should open relative to the iconAnchor
 });
 
 
@@ -64,19 +58,19 @@ map.fitBounds(featureGroup.getBounds(), {
 });
 
 
-	// control that shows population info
-	var info = L.control();
+// control that shows population info
+var info = L.control();
 
-	info.onAdd = function (map) {
-		this._div = L.DomUtil.create('div', 'info');
-		this.update();
-		return this._div;
-	};
+info.onAdd = function (map) {
+	this._div = L.DomUtil.create('div', 'info');
+	this.update();
+	return this._div;
+};
 
-	info.update = function (props) {
-		this._div.innerHTML = '<h4>World Population</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + props.pop_est + ' people '
-			: 'Hover over a country');
+info.update = function (props) {
+	this._div.innerHTML = '<h4>World Population</h4>' +  (props ?
+		'<b>' + props.name + '</b><br />' + props.pop_est + ' people '
+		: 'Hover over a country');
 	};
 
 	info.addTo(map);
@@ -85,17 +79,17 @@ map.fitBounds(featureGroup.getBounds(), {
 	// get color depending on population
 	function getColor(population) {
 		return population > 1000000000 ? '#BF3F3F' :
-				population > 500000000  ? '#FDF6F6' :
-				population > 300000000  ? '#B0B21E' :
-				population > 200000000 ? '#5A5B0F' :
-				population > 150000000 ? '#7F3FBF' :
-				population > 100000000   ? '#2F353B' :
-				population > 50000000   ? '#2F07BE' :
-				population > 40000000 ? '#237068' :
-				population > 30000000 ? '#AC740B':
-				population > 20000000 ? '#04025D' :
-				population > 10000000  ? '#44AB1B' :
-							'#7B2F97';
+		population > 500000000  ? '#FDF6F6' :
+		population > 300000000  ? '#B0B21E' :
+		population > 200000000 ? '#5A5B0F' :
+		population > 150000000 ? '#7F3FBF' :
+		population > 100000000   ? '#2F353B' :
+		population > 50000000   ? '#2F07BE' :
+		population > 40000000 ? '#237068' :
+		population > 30000000 ? '#AC740B':
+		population > 20000000 ? '#04025D' :
+		population > 10000000  ? '#44AB1B' :
+		'#7B2F97';
 	}
 
 	function style(feature) {
@@ -145,10 +139,34 @@ map.fitBounds(featureGroup.getBounds(), {
 		});
 	}
 
-	geojson = L.geoJson(worldData, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
+	// geojson = L.geoJson(worldData, {
+	// 	style: style,
+	// 	onEachFeature: onEachFeature
+	// }).addTo(map);
+
+	// var geojson;
+
+	var worldJSON = false;
+	fetch('/custom.geo.json', {
+		method: 'GET'
+	})
+	.then(response => response.json())
+	.then(json=> {
+		console.log(json)
+		geojson = L.geoJSON(json, {
+			style: style,
+			onEachFeature: onEachFeature
+
+			// style: function(feature){
+			// 	return {
+			// 		fillOpacity: 0
+			// 	};
+			// }
+			
+		}).addTo(map);
+	})
+	.catch(error => console.log(error.message));
+
 
 	map.attributionControl.addAttribution('Population data &copy; <a href="https://www.census.gov/popclock/">US Census Bureau</a>');
 
@@ -158,9 +176,9 @@ map.fitBounds(featureGroup.getBounds(), {
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 10000000, 50000000, 100000000, 150000000, 200000000, 300000000, 500000000, 1000000000],
-			labels = [],
-			from, to;
+		grades = [0, 10000000, 50000000, 100000000, 150000000, 200000000, 300000000, 500000000, 1000000000],
+		labels = [],
+		from, to;
 
 		for (var i = 0; i < grades.length; i++) {
 			from = grades[i];
@@ -169,10 +187,10 @@ map.fitBounds(featureGroup.getBounds(), {
 			labels.push(
 				'<i style="background:' + getColor(from + 1) + '"></i> ' +
 				from + (to ? '&ndash;' + to : '+'));
-		}
+			}
 
-		div.innerHTML = labels.join('<br>');
-		return div;
-	};
+			div.innerHTML = labels.join('<br>');
+			return div;
+		};
 
-	legend.addTo(map);
+		legend.addTo(map);
