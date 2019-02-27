@@ -1,17 +1,18 @@
 
 html, body {
   height: 100%;
-  margin: 0;
-}
-#map {
-  width: 100px;
-  height: 200px;
+  margin: 5px;
 }
 
-
 #map {
-  width: 800px;
-  height: 500px;
+  width: 100%;
+  height: 600px;
+  overflow: auto;
+  
+}
+
+.container-fluid{
+  background-image: url(../img/chalk_bkgd.png);
 }
 .info {
   padding: 6px 8px;
