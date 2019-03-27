@@ -1,0 +1,6 @@
+[{"name": "Sponsor 1", "mainUrl": "https://www.ndsu.edu", "secondUrl": "https://www.ndsu.edu/about", "logoUrl": "images/logo1.png"},
+{"name": "Sponsor 2", "mainUrl": "https://www.ndsu.edu/physics/", 
+"secondUrl": "https://www.ndsu.edu/physics/society_of_physics_students_sps/", "logoUrl": "images/logo2.png"},
+{"name": "Sponsor 3", "mainUrl": "https://www.ndsu.edu/cs/", "secondUrl": "", "logoUrl": "images/logo3.png"},
+{"name": "Sponsor 4", "mainUrl": "", "secondUrl": "https://acm-ndsu.github.io/", "logoUrl": "images/logo4.png"},
+]
