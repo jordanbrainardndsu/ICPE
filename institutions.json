@@ -1,28 +1,41 @@
-{ "institutions": [
-{"country":"Angola", "institution":"Universidade Independente de Angola"},
-{"country":"Australia", "institution":"Deakin University"},
-{"country":"Australia", "institution":"Swinburne University of Technology"},
-{"country":"Australia", "institution":"University of New South Wales"},
-{"country":"Australia", "institution":"University of Western Sydney"},
-{"country":"Australia", "institution":"University of Western Sydney"},
-{"country":"Germany", "institution":"Fachhochschule Hannover"},
-{"country":"Germany", "institution":"Fachhochschule Hannover"},
-{"country":"Germany", "institution":"Technische Universität Carolo-Wilhelmina Braunschweig"},
-{"country":"New Zealand", "institution":"University of Auckland"},
-{"country":"Sweden", "institution":"Blekinge Institute of Technology"},
-{"country":"Sweden", "institution":"Blekinge Institute of Technology"},
-{"country":"Sweden", "institution":"Blekinge Institute of Technology"},
-{"country":"Sweden", "institution":"Linköping University"},
-{"country":"Sweden", "institution":"Linköping University"},
-{"country":"United States", "institution":"North Carolina State University"},
-{"country":"United States", "institution":"North Dakota State University"},
-{"country":"United States", "institution":"North Dakota State University"},
-{"country":"United States", "institution":"North Dakota State University"},
-{"country":"United States", "institution":"North Dakota State University"},
-{"country":"United States", "institution":"University of Arkansas - Fayetteville"},
-{"country":"United States", "institution":"University of Colorado at Colorado Springs"},
-{"country":"United States", "institution":"University of Illinois at Urbana-Champaign"},
-{"country":"United States", "institution":"University of Michigan - Ann Arbor"},
-{"country":"United States", "institution":"University of Pittsburgh"},
-{"country":"Brazil", "institution":"Insper"}
-]}
+{
+    "institutions": [{
+        
+        
+            "country": "Angola",
+            "institution": ["Universidade Independente de Angola"]
+        },
+        {
+            "country": "Canada",
+            "institution": "Universidade"
+        },
+        {
+            "country": "Australia",
+            "institution": "Deakin University"
+        },
+        {
+            "country": "Germany",
+            "institution": "Technische Universität Carolo-Wilhelmina Braunschweig"
+        },
+        {
+            "country": "New Zealand",
+            "institution": "University of Auckland"
+        },
+        {
+            "country": "Sweden",
+            "institution": "Linköping University"
+        },
+        {
+            "country": "United States of America",
+            "institution": "University of Pittsburgh"
+        },
+        {
+            "country": "Brazil",
+            "institution": "Insper"
+        },
+        {
+            "country": "Uzbekistan",
+            "institution": "Tashkent Technological University"
+        }
+    ]
+}

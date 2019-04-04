@@ -2910,7 +2910,7 @@
     }, {
         "type": "Feature",
         "properties": {
-            "institutions": ["North Carolina State University", "North Dakota State University"],
+            
             "scalerank": 1,
             "featurecla": "Admin-0 country",
             "labelrank": 2,
@@ -4368,7 +4368,7 @@
     }, {
         "type": "Feature",
         "properties": {
-            "institutions": ["Insper"],
+            
             "scalerank": 1,
             "featurecla": "Admin-0 country",
             "labelrank": 2,
@@ -11474,7 +11474,7 @@
     }, {
         "type": "Feature",
         "properties": {
-            "institutions": "Universidade Independente de Angola",
+            
             "scalerank": 1,
             "featurecla": "Admin-0 country",
             "labelrank": 3,
@@ -18164,7 +18164,7 @@
     }, {
         "type": "Feature",
         "properties": {
-            "institutions": ["Fachhochschule Hannover", "Technische Universität Carolo-Wilhelmina Braunschweig"],
+        
             "scalerank": 1,
             "featurecla": "Admin-0 country",
             "labelrank": 2,
@@ -22340,7 +22340,7 @@
     }, {
         "type": "Feature",
         "properties": {
-            "institutions": ["Linköping University", "Blekinge Institute of Technology"],
+            
             "scalerank": 1,
             "featurecla": "Admin-0 country",
             "labelrank": 3,
@@ -22456,7 +22456,7 @@
     }, {
         "type": "Feature",
         "properties": {
-            "institutions": ["University of Western Sydney", "University of New South Wales", "Swinburne University of Technology", "Deakin University"],
+
             "scalerank": 1,
             "featurecla": "Admin-0 country",
             "labelrank": 2,
@@ -22974,7 +22974,7 @@
     }, {
         "type": "Feature",
         "properties": {
-            "institutions": ["University of Auckland"],
+            
             "scalerank": 1,
             "featurecla": "Admin-0 country",
             "labelrank": 2,

@@ -1,26 +1,60 @@
+@charset "utf-8";
+
+/*
+   Capstone Project Fall of 2019, NDSU
+   
+   Author:   Khurshid Kurbanov   
+   Date:     2/11/19
+   
+   Filename: map.css
+   
+
+*/
+
+/* ===========
+   Base Styles
+   ===========
+*/
 
 html, body {
-  height: 100%;
-  margin: 5px;
+  height: 110%;
+  margin: 0px;
 }
 
 #map {
-  width: 100%;
-  height: 600px;
-  overflow: auto;
   
+  width: 100%;
+  height: 500px;
+  
+  /* border-top-left-radius: 50%;
+  border-top-right-radius: 50%; */
 }
 
-.container-fluid{
-  background-image: url(../img/chalk_bkgd.png);
+/* #slider h2 {
+  padding: 10px;
+  position: absolute;
+  width: 250px;
+  z-index: 1000;
+  background: greenyellow;
+  margin-left: -250px;
+  transition: 1.4s;
 }
+
+#slider.in {
+  margin-left: 0px;
+} */
+
+
+
 .info {
+  position: relative;
   padding: 6px 8px;
   font: 14px/16px Arial, Helvetica, sans-serif;
   background: yellow;
   background:rgba(127, 191, 63, 0.8);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 10px;
+  /* width: 150px; */
 }
 .info h4 {
   margin: 0 0 5px;
@@ -35,4 +69,29 @@ html, body {
     height: 18px;
     float: left;
     margin-right: 8px;
-    opacity: 0.7; }
+    opacity: 0.7; 
+  }
+
+  /* Mobile Styles: 0px to 480px */
+
+  @media only screen and (max-width: 480px) {
+   
+   
+
+  }
+
+
+
+  /* Tablet Styles: 481px and greater */
+
+  @media only screen and (min-width: 481px) {
+
+   
+
+  }
+
+  /* Desktop Styles: 769px and greater */
+
+  @media only screen and (min-width: 769px) {
+
+  }
