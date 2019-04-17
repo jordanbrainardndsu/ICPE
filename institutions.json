@@ -3,11 +3,21 @@
         
         
             "country": "Angola",
-            "institution": ["Universidade Independente de Angola"]
+            "institution": ["Uni Independente de Angola", "GGG", "Angola Uni"]
         },
         {
+            "country": "Fiji",
+            "institution": ["Universidade", "Uni Canada"]
+        },
+
+         {
+             "country": "Russia",
+             "institution": ["Uni Of Moscow", "St Peters College of Art"]
+         },
+
+        {
             "country": "Canada",
-            "institution": "Universidade"
+            "institution": ["Universidade","Uni Canada"]
         },
         {
             "country": "Australia",

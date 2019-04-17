@@ -1,0 +1,8 @@
+{ "subjects": 
+[{"name":"Agricultural Engineering","description":"<p> An Agricultural engineering degree involves learning how to apply engineering to the agricultural industry to assist with area of farming including: soil conservation and salinity, ground preparation, irrigation, farm machinery design and production and helping develop more effective harvest techniques.&nbsp;</p>","created":1517571754000,"status":"APPROVED"},
+{"name":"Computer Engineering/Electrical and Computer Engineer","description":"<p> Computer Engineering&nbsp;involves both computer sciences and electrical engineering.</p>","created":1517571709000,"status":"APPROVED"},
+{"name":"Computer Science","description":"<p> the study of the principles and use of computers</p>","created":1517573455000,"status":"APPROVED"},
+{"name":"Journalism","description":"<p> Writing for newspapers, magazines, or news websites or preparing news to be broadcast.</p>","created":1517571959000,"status":"APPROVED"},
+{"name":"Marketing","description":"<p> Generally part of the College of Business</p>","created":1517571777000,"status":"APPROVED"},{"name":"Mechanical Engineering","description":"<p> A Mechanical Engineering Degree involves the design of mechanical systems.</p>","created":1517571723000,"status":"APPROVED"},
+{"name":"Software Engineering","description":"<p> the application of&nbsp;<a href=\"https://en.wikipedia.org/wiki/Engineering\" title=\"Engineering\">engineering</a>&nbsp;to the&nbsp;<a href=\"https://en.wikipedia.org/wiki/Software_development\" title=\"Software development\">development</a>&nbsp;of&nbsp;<a href=\"https://en.wikipedia.org/wiki/Software\" title=\"Software\">software</a>&nbsp;in a systematic method</p>","created":1517573621000,"status":"APPROVED"}]
+}

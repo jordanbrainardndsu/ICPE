@@ -1,63 +1,11 @@
 
 $(document).ready(function(){
 
-
-// var style = {
-// 	"clickable": true,
-// 	"color": "#00D",
-// 	"fillColor": "#00D",
-// 	"weight": 1.0,
-// 	"opacity": 0.3,
-// 	"fillOpacity": 0.2
-// };
-// var hoverStyle = {
-// 	"fillOpacity": 0.5
-// };
-
-// var geojsonURL = 'http://tile.example.com/{z}/{x}/{y}.json';
-// var geojsonTileLayer = new L.TileLayer.GeoJSON(geojsonURL, {
-// 	clipTiles: true,
-// 	unique: function (feature) {
-// 		return feature.id;
-// 	}
-// }, {
-// 		style: style,
-// 		onEachFeature: function (feature, layer) {
-// 			if (feature.properties) {
-// 				var popupString = '<div class="popup">';
-// 				for (var k in feature.properties) {
-// 					var v = feature.properties[k];
-// 					popupString += k + ': ' + v + '<br />';
-// 				}
-// 				popupString += '</div>';
-// 				layer.bindPopup(popupString);
-// 			}
-// 			if (!(layer instanceof L.Point)) {
-// 				layer.on('mouseover', function () {
-// 					layer.setStyle(hoverStyle);
-// 				});
-// 				layer.on('mouseout', function () {
-// 					layer.setStyle(style);
-// 				});
-// 			}
-// 		}
-// 	}
-// );
-// map.addLayer(geojsonTileLayer);
-
-//$('#slider').height(window.innerHTML);
-
-$(document).on('click', '#toggle', function(){
-	if($('#slider').hasClass('in')){
-		$('#slider').removeClass('in')
-	}else{
-		$('#slider').addClass('in')
-	}
-});
 var map = L.map('map', {
-	minZoom: 1,
-	maxZoom: 2,
-	dragging: true
+	 minZoom: 1,
+	// maxZoom: 2,
+	dragging: true,
+
 }).fitWorld();
 
 
@@ -70,7 +18,16 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 	id: 'mapbox.streets'
 }).addTo(map);
 
-L.control.scale({ maxWidth: 250 }).addTo(map);
+	L.control.scale({ maxWidth: 250 }).addTo(map);
+
+		var southWest = L.latLng(-89.98155760646617, -180),
+		northEast = L.latLng(89.99346179538875, 180);
+	var bounds = L.latLngBounds(southWest, northEast);
+
+	map.setMaxBounds(bounds);
+	map.on('drag', function () {
+		map.panInsideBounds(bounds, { animate: false });
+	});
 
 
 
@@ -94,15 +51,10 @@ String.prototype.replaceAll = function (search, replacement) {
 
 info.update = function (props) {
 	this._div.innerHTML = '<h4>Country</h4>'+
-	
-
 	 (props ? '<b>' + props.NAME + '</b><br /> <h4>Institution</h4>' +
-	 JSON.stringify(props.institutions).replace('[', '').replace(']', '').replaceAll('"', '').replaceAll(',', '<br>')
-	 
-
-		: 'Hover over a country');
+		JSON.stringify(props.institutions ).replace('[', '').replace(']', '').replaceAll('"', '').replaceAll(',', '<br>'):
 	
-	};
+		'Hover over a country'); };
 
 	info.addTo(map);
 
@@ -112,68 +64,68 @@ info.update = function (props) {
 	hr2.onreadystatechange = function () {
 			if (this.readyState == 4 && this.status == 200) {
 				json2 = JSON.parse(hr2.responseText);
-				
+				//console.log(json2)
 
 			}
 		}
 
-		hr2.open("GET", url2, true);
-		hr2.send();
- 
-	
-	
+	hr2.open("GET", url2, true);
+	hr2.send();
 
-	
 
 	//	get color depending on population
-	function getColor(population) {
-		     		
-						if(population){
-							return "red";
-						}
-								
-								
+	function getColor(countryName) {
 
+		if(countryName){
+		    return ["Albania", "Argentina", "Australia", "Azerbaijan", "Belarus",
+				"Bhutan", "Bosnia and Herz.", "Bulgaria", "Cyprus", "Dem. Rep. Congo",
+				"El Salvador", "Finland", "Gabon", "Gambia", "Germany", "Guyana", "Hungary",
+				"Iceland", "Iraq", "Italy", "Jamaica", "Kazakhstan", "Laos", "Liberia", "Malawi",
+				"Malaysia", "Mauritania", "Mexico", "Niger", "North Korea", "Pakistan", "Peru",
+				"Somalia", "Spain", "Sri Lanka", "Sudan", "Swaziland", "Taiwan", "Tajikistan",
+				"Bahamas", "Togo", "United Arab Emirates", "Vanuatu", "Yemen", "eSwatini"].includes(countryName) ? '#e2061c' :
 
-						}
-						  
-							
-						//return population === json2.institutions[i].country ? 'hsla(54, 91%, 46%, 0.88)' :
-						// population === json2.institutions[1].country ? 'hsla(305, 61%, 30%, 0.97)' :
-						// population === json2.institutions[2].country ? '#ce3e0e' :
-						// population === json2.institutions[3].country ? 'hsla(245, 91%, 46%, 0.88)' :
-						// population === json2.institutions[4].country ? '#ed0b17' :
-						// population === json2.institutions[5].country ? '#e008f4' :
-						// '#b6bab6';
+			["Angola", "Bangladesh", "Belize", "Bolivia", "Botswana", "Burkina Faso",
+					"Burundi", "Central African Rep.", "China", "Costa Rica", "Czech Republic", "Estonia",
+					"France", "Georgia", "Greece", "Guinea", "Indonesia", "Iran", "Ireland", "Israel",
+					 "Lebanon", "Libya", "Lithuania", "Mozambique", "Nigeria", "Norway", "Oman",
+					"Puerto Rico", "Slovenia", "Thailand", "Uganda", "Ukraine", "United States of America",
+					"Uzbekistan", "Venezuela", "W. Sahara", "New Caledonia", "Ethiopia", "Czechia", "Serbia",
+					 "Falkland Is."].includes(countryName) ? '#1324dd' :
 
-				
-	// L.geoJSON(states, {
-		// 	style: function (feature) {
-		// 		switch (feature.properties.party) {
-		// 			case 'Republican':
-		// 				return {
-		// 					color: "#ff0000"
-		// 				};
-		// 			case 'Democrat':
-		// 				return {
-		// 					color: "#0000ff"
-		// 				};
-		// 		}
-		// 	}
-		// }).addTo(map);
+			["Algeria", "Armenia", "Benin", "Cameroon", "Canada", "Colombia",
+						"Cuba", "Djibouti", "Dominican Rep.", "Guatemala", "India", "Ivory Coast",
+						"Kyrgyzstan", "Lesotho", "Macedonia", "Madagascar", "Moldova", "Montenegro", "Namibia",
+						"Netherlands", "New Zealand", "Nicaragua", "Paraguay", "Portugal", "Russia",
+						"Saudi Arabia", "Senegal", "Slovakia", "Solomon Is.", "South Korea", "S. Sudan",
+						"Suriname", "Sweden", "Switzerland", "Syria", "Turkmenistan", "United Kingdom",
+						"Tanzania", "Uruguay", "Vietnam", "Zimbabwe", "Côte d'Ivoire", ].includes(countryName) ? '#f7e702' :
+
+			["Brazil", "Afghanistan", "Austria", "Belgium", "Brunei", "Cambodia", "Chad",
+						"Chile", "Congo", "Croatia", "Denmark", "Ecuador", "Egypt", "Eq. Guinea", "Eritrea",
+						"Fiji", "Ghana", "Greenland", "Guinea-Bissau", "Haiti", "Honduras", "Japan", "Jordan",
+						"Kenya", "Kuwait", "Latvia", "Mali", "Mongolia", "Morocco", "Myanmar", "Nepal",
+						"Panama", "Papua New Guinea", "Philippines", "Poland", "Qatar", "Romania", "Rwanda",
+						"Sierra Leone", "South Africa", "Trinidad and Tobago", "Tunisia", "Turkey", "Zambia", 
+						"Somaliland", "Kosovo", "Timor-Leste"].includes(countryName) ? '#16dd23' :
+
+						'gray'
+		}
+	 }
+
 
   function mystyle(feature) {
-		
-    return {
-      weight: 2,
-      opacity: 1,
-      color: 'white',
-      dashArray: '3',
-      fillOpacity: 0.7,
-	  fillColor: getColor(feature.properties.country)
-			 
+
+	 return {
+		weight: 2,
+		opacity: 1,
+		color: '#F5F5F5',
+		dashArray: '1',
+		fillOpacity: 0.7,
+	  fillColor: getColor(feature.properties.country),
+
 		};
-		
+
   }
 
 
@@ -184,9 +136,9 @@ info.update = function (props) {
 
 		layer.setStyle({
 			weight: 5,
-			color: 'yellow',
+			color: '#ababab',
 			dashArray: '',
-			fillOpacity: 0.7
+			fillOpacity: 0.8
 		});
 
 		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -210,9 +162,9 @@ info.update = function (props) {
 	function onEachFeature(feature, layer) {
 		layer.on({
 			mouseover: highlightFeature,
-      //click: highlightFeature,
+		//click: highlightFeature,
 			 mouseout: resetHighlight,
-      //click: resetHighlight,
+		//click: resetHighlight,
 
 			click: zoomToFeature
 		});
@@ -225,59 +177,25 @@ info.update = function (props) {
 	hr.onreadystatechange = function(){
 		if(this.readyState == 4 && this.status == 200){
 		 json = JSON.parse(hr.responseText);
-	//	console.log(json.features.length);
 		for(var i=0; i<=json.features.length-1; i++){
-				//console.log(json.features[i].properties.name);
 			for(var j=0; j<=json2.institutions.length-1; j++){
-			
 				if(json.features[i].properties.NAME===json2.institutions[j].country){
 					json.features[i].properties.institutions = json2.institutions[j].institution;
 					json.features[i].properties.country = json2.institutions[j].country;
-          //console.log(json.features[i].properties.country);
-					
-
 				}
 			}
 		}
-		 
-	//    console.log(json.features.push(json2));
-
-		//console.log(json)
-	
-                 geojson = L.geoJSON(json, {
-								  style: mystyle,								  						
+					  geojson = L.geoJSON(json, {
+								  style: mystyle,
 									onEachFeature: onEachFeature,
 									})
-			
+
 				.addTo(map);
 
-			
-				 
-					}
-					}
+	}
+ }
 
 					hr.open("GET", url, true);
 					hr.send();
-
-
-	map.attributionControl.addAttribution('Population data &copy; <a href="https://www.census.gov/popclock/">US Census Bureau</a>');
-
-
-// var institutionsJSON = false;
-// fetch('/institutions.json', {
-// 		method: 'GET'
-// 	})
-// 	.then(response => response.json())
-// 	.then(json => {
-// 		//	console.log(json)
-
-
-// 		// geojson = L.geoJSON(json, {
-// 		// 	style: mystyle,
-// 		// 	onEachFeature: onEachFeature
-// 		// })
-// 		// .addTo(map);
-// 	})
-// 	.catch(error => console.log(error.message));
 
 });

@@ -17,13 +17,17 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Oswald:400,500,600,700" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,900" rel="stylesheet" type="text/css">
-
+	 
+	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+	 	integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+	 	crossorigin="" />
 
     <!-- Plugin CSS -->
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-    <link href="css/freelancer.css" rel="stylesheet">
+		<link href="css/freelancer.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/map.css">
 
     <style type="text/css">
     body,td,th {
@@ -68,9 +72,7 @@ a:active {
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item mx-0 mx-lg-1">
-              <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="map.html">Map</a>
-            </li>
+           
             <li class="nav-item mx-0 mx-lg-1">
               <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger active" href="#">About</a>
             </li>
@@ -103,7 +105,66 @@ a:active {
 	<p class="w3-left-align w3-medium">Welcome to International Capstone Project Exchange, a network of universities and companies that collaborate to give students real-world international experience.</p>
 
 	<p class="w3-left-align w3-medium">Using the telecommuting concept, teams of capstone students complete projects for industry partners in other countries. The exchange helps universities and companies from around the world connect.</p>
+	
+	<h3 style="text-align: center" >
+		<span style="color: #e2061c">C</span>
+		<span style="color: #1324dd">o</span>
+		<span style="color: #f7e702">u</span>
+		<span style="color: #16dd23">n</span>
 
+		<span style="color: #e2061c">t</span>
+		<span style="color: #1324dd">r</span>
+		<span style="color: #f7e702">i</span>
+		<span style="color: #16dd23">e</span>
+
+		<span style="color: #e2061c">s</span>
+		&nbsp;
+		<span style="color: #1324dd">w</span>
+		<span style="color: #f7e702">i</span>
+		<span style="color: #16dd23">t</span>
+
+		<span style="color: #e2061c">h</span>
+		&nbsp;
+		<span style="color: #1324dd">P</span>
+		<span style="color: #f7e702">a</span>
+		<span style="color: #16dd23">r</span>
+
+		<span style="color: #e2061c">t</span>
+		<span style="color: #1324dd">i</span>
+		<span style="color: #f7e702">c</span>
+		<span style="color: #16dd23">i</span>
+
+		<span style="color: #e2061c">p</span>
+		<span style="color: #1324dd">a</span>
+		<span style="color: #f7e702">t</span>
+		<span style="color: #16dd23">i</span>
+
+		<span style="color: #e2061c">n</span>
+		<span style="color: #1324dd">g</span>
+		&nbsp;
+		<span style="color: #f7e702">U</span>
+		<span style="color: #16dd23">n</span>
+
+		<span style="color: #e2061c">i</span>
+		<span style="color: #1324dd">v</span>
+		<span style="color: #f7e702">e</span>
+		<span style="color: #16dd23">r</span>
+
+		<span style="color: #e2061c ">s</span>
+		<span style="color: #1324dd ">i</span>
+		<span style="color: #f7e702">t</span>
+		<span style="color: #16dd23">i</span>
+
+		<span style="color: #e2061c">e</span>
+		<span style="color: #1324dd">s</span>
+	
+
+		</h3> 
+	<div id="map" style=" margin:auto; box-shadow: 1px 1px 1px 1px black; -webkit-box-shadow: 3px 3px 4px 4px black;-moz-box-shadow:3px 3px 4px 4px
+			black">
+	
+	</div>
+  <br>
 	<p class="w3-left-align w3-medium"><strong>How the Exchange Works </strong><br>
 	Universities can request to join the International Capstone Project Exchange at www.ndsu.edu/cs/icpe. Once the university is registered, the faculty facilitator can request to be paired with a university in another country that is working with students in the same or a complementary discipline. That university will find a company to sponsor a project for your students, and you will find a company to sponsor a project for their students. The exchanges, however, are not required to run at the same time. Project timelines are based on each university’s academic calendar. Your responsibility to your university partner is to help them connect with a company in your country. Once that occurs, your role in that exchange is complete. Likewise, once you are connected with a company in another country, your university partner will step away. You and the company will work together to shape the experience.</p>
 
@@ -129,7 +190,10 @@ a:active {
 				<li>Gain experience managing international projects</li>
 			</ul>
 			<p class="w3-left-align w3-medium"><strong>Subject Areas</strong><br>
-			  The exchange is open to any discipline, and any other areas where there may be interest are welcome. Current projects are in computer science, software engineering, electrical engineering, mechanical engineering, agricultural and biosystems engineering, biology, environmental management, international marketing, and international journalism.</p>
+				The exchange is open to any discipline, and any other areas where there may be interest are welcome. Current projects are:</p>
+				<div  >
+					<ul id="subject"></ul>
+				</div><br>
 			<p class="w3-left-align w3-medium"><strong>Various Project Exchange Models</strong></p>
 			<ul class="a">
 			  	<li><strong>Default/Standard</strong>: 1-1 pairing where each university finds an industry sponsor for a student team in the paired country</li>
@@ -150,6 +214,10 @@ a:active {
 		<li>Remember the university-company relationship needs to be win-win. Companies are more willing to offer important projects, and to be well prepared, if they know they are guaranteed to work with a team rather than being offered as one of many options.</li>
 	</ul>
 
+
+	
+
+<br>
 	<p class="w3-left-align w3-medium"><strong>Past Collaborators</strong></p>
 	<ul class="a">
 	  	<li>Australia</li>
@@ -243,7 +311,12 @@ a:active {
     <script src="js/contact_me.js"></script>
 
     <!-- Custom scripts for this template -->
-    <script src="js/freelancer.min.js"></script>
+		<script src="js/freelancer.min.js"></script>
+		<script src="js/subject.js"></script>
+		<script src="js/map2.js"></script>
+		<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+			integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+			crossorigin=""></script>
 
 	  </div>
 </body>
