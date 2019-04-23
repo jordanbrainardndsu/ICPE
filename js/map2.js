@@ -178,10 +178,11 @@ info.update = function (props) {
 		if(this.readyState == 4 && this.status == 200){
 		 json = JSON.parse(hr.responseText);
 		for(var i=0; i<=json.features.length-1; i++){
-			for(var j=0; j<=json2.institutions.length-1; j++){
-				if(json.features[i].properties.NAME===json2.institutions[j].country){
-					json.features[i].properties.institutions = json2.institutions[j].institution;
-					json.features[i].properties.country = json2.institutions[j].country;
+			for(var j in json2){
+				if(json.features[i].properties.NAME===j){
+					console.log(j)
+					json.features[i].properties.institutions = json2[j];
+					json.features[i].properties.country = j;
 				}
 			}
 		}

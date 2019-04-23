@@ -1,51 +1,19 @@
 {
-    "institutions": [{
-        
-        
-            "country": "Angola",
-            "institution": ["Uni Independente de Angola", "GGG", "Angola Uni"]
-        },
-        {
-            "country": "Fiji",
-            "institution": ["Universidade", "Uni Canada"]
-        },
-
-         {
-             "country": "Russia",
-             "institution": ["Uni Of Moscow", "St Peters College of Art"]
-         },
-
-        {
-            "country": "Canada",
-            "institution": ["Universidade","Uni Canada"]
-        },
-        {
-            "country": "Australia",
-            "institution": "Deakin University"
-        },
-        {
-            "country": "Germany",
-            "institution": "Technische Universität Carolo-Wilhelmina Braunschweig"
-        },
-        {
-            "country": "New Zealand",
-            "institution": "University of Auckland"
-        },
-        {
-            "country": "Sweden",
-            "institution": "Linköping University"
-        },
-        {
-            "country": "United States of America",
-            "institution": "University of Pittsburgh"
-        },
-        {
-            "country": "Brazil",
-            "institution": "Insper"
-        },
-        {
-            "country": "Uzbekistan",
-            "institution": "Tashkent Technological University"
-        }
+    "United States of America": [
+        "University of Arkansas - Fayetteville",
+        "North Carolina State University",
+        "North Dakota State University"
+    ],
+    "Brazil": [
+        "Insper"
+    ],
+    "Australia": [
+        "University of Western Sydney",
+        "Swinburne University of Technology",
+        "Deakin University"
+    ],
+    "Germany": [
+        "Technische Universität Carolo-Wilhelmina Braunschweig",
+        "Fachhochschule Hannover"
     ]
 }

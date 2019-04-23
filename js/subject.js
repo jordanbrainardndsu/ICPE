@@ -8,8 +8,8 @@ hr3.onreadystatechange = function () {
 
         var subjectList = "";
         var i;
-        for (i = 0; i < json3.subjects.length; i++) {
-            subjectList += "<li>" + json3.subjects[i].name + "</li>";
+        for (i in json3) {
+            subjectList += "<li>" + json3[i].name + "</li>";
         }
         $('#subject').html(subjectList);
 
