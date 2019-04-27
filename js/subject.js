@@ -1,3 +1,4 @@
+//displays subjects list on the about page
 var hr3 = new XMLHttpRequest();
 var url3 = "subjects.json";
 var json3;
