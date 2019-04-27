@@ -1,37 +1,79 @@
+@charset "utf-8";
 
-  html, body {
-    height: 100%;
-    margin: 0;
-  }
-  #map {
-    width: 100px;
-    height: 200px;
-  }
+/*
+   Capstone Project Fall of 2019, NDSU
+   
+   Author:   Khurshid Kurbanov   
+   Date:     2/11/19
+   
+   Filename: map.css
+   
 
+*/
+
+/* ===========
+   Base Styles
+   ===========
+*/
+
+html,
+body {
+  padding: 20;
+  margin: 0;
+}
 
 #map {
-  width: 800px;
-  height: 500px;
+
+  width: 95%;
+  height: 400px;
+
 }
+
+
+
+
+
 .info {
+  position: relative;
   padding: 6px 8px;
   font: 14px/16px Arial, Helvetica, sans-serif;
-   background: yellow;
-    background:rgba(127, 191, 63, 0.8);
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-     border-radius: 10px;
-   }
+
+  /* background:rgba(127, 191, 63, 0.8); */
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  /* width: 150px; */
+}
+
 .info h4 {
-   margin: 0 0 5px;
-   color: #777;
- }
+  margin: 0 0 5px;
+  color: #777;
+}
+
 .legend {
   text-align: left;
-   line-height: 18px;
-    color: #555; }
+  line-height: 18px;
+  color: #555;
+}
+
 .legend i {
-   width: 18px;
-    height: 18px;
-    float: left;
-    margin-right: 8px;
-     opacity: 0.7; }
+  width: 18px;
+  height: 18px;
+  float: left;
+  margin-right: 8px;
+  opacity: 0.7;
+}
+
+/* Mobile Styles: 0px to 480px */
+
+@media only screen and (max-width: 480px) {}
+
+
+
+/* Tablet Styles: 481px and greater */
+
+@media only screen and (min-width: 481px) {}
+
+/* Desktop Styles: 769px and greater */
+
+@media only screen and (min-width: 769px) {}
