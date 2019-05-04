@@ -1,4 +1,19 @@
 
+//  "Morocco": ["Université Mohammed VI des Sciences de la Santé, Casablanca",
+// "Université Mohammed VI Polytechnique, Benguerir",
+// "Abdelmalek Essaâdi University, Tétouan - Tanger",
+// "Al Akhawayn University, Ifrane",
+// "Cadi Ayyad University, Marrakesh",
+// "Chouaib Doukkali University, El Jadida",
+// "Hassan II Mohammedia University",
+// "Mohammedia Hassan Premier University, Settat",
+// "Ibn Tofail University, Kenitra",
+// "Ibnou Zohr University, Agadir",
+// "Mohamed Premier University, Oujda",
+// "Mohammed V University, Rabat"
+// ]
+
+
 /*
    Capstone Project Spring of 2019, NDSU
    
@@ -90,9 +105,13 @@ $(document).ready(function () {
 	hr2.open("GET", url2, true);
 	hr2.send();
 
+	for (i in json2) {
+		console.log(json2[i]);
+	}
 
 	//	sets countries into four different colors that are not adjacent on the map
 	function getColor(countryName) {
+		
 
 		if (countryName) {
 			return ["Albania", "Argentina", "Australia", "Azerbaijan", "Belarus",
@@ -102,7 +121,7 @@ $(document).ready(function () {
 					"Malaysia", "Mauritania", "Mexico", "Niger", "North Korea", "Pakistan", "Peru",
 					"Somalia", "Spain", "Sri Lanka", "Sudan", "Swaziland", "Taiwan", "Tajikistan",
 					"Bahamas", "Togo", "United Arab Emirates", "Vanuatu", "Yemen", "eSwatini"
-				].includes(countryName) ? '#e2061c' :
+				].includes(countryName) ? '#e2061c':
 
 				["Angola", "Bangladesh", "Belize", "Bolivia", "Botswana", "Burkina Faso",
 					"Burundi", "Central African Rep.", "China", "Costa Rica", "Czech Republic", "Estonia",
@@ -111,7 +130,7 @@ $(document).ready(function () {
 					"Puerto Rico", "Slovenia", "Thailand", "Uganda", "Ukraine", "United States of America",
 					"Uzbekistan", "Venezuela", "W. Sahara", "New Caledonia", "Ethiopia", "Czechia", "Serbia",
 					"Falkland Is."
-				].includes(countryName) ? '#1324dd' :
+				].includes(countryName) ? '#1324dd':
 
 				["Algeria", "Armenia", "Benin", "Cameroon", "Canada", "Colombia",
 					"Cuba", "Djibouti", "Dominican Rep.", "Guatemala", "India", "Ivory Coast",
@@ -120,7 +139,7 @@ $(document).ready(function () {
 					"Saudi Arabia", "Senegal", "Slovakia", "Solomon Is.", "South Korea", "S. Sudan",
 					"Suriname", "Sweden", "Switzerland", "Syria", "Turkmenistan", "United Kingdom",
 					"Tanzania", "Uruguay", "Vietnam", "Zimbabwe", "Côte d'Ivoire",
-				].includes(countryName) ? '#f7e702' :
+				].includes(countryName) ? '#f7e702':
 
 				["Brazil", "Afghanistan", "Austria", "Belgium", "Brunei", "Cambodia", "Chad",
 					"Chile", "Congo", "Croatia", "Denmark", "Ecuador", "Egypt", "Eq. Guinea", "Eritrea",
@@ -129,7 +148,7 @@ $(document).ready(function () {
 					"Panama", "Papua New Guinea", "Philippines", "Poland", "Qatar", "Romania", "Rwanda",
 					"Sierra Leone", "South Africa", "Trinidad and Tobago", "Tunisia", "Turkey", "Zambia",
 					"Somaliland", "Kosovo", "Timor-Leste"
-				].includes(countryName) ? '#16dd23' :
+				].includes(countryName) ? '#16dd23':
 
 				'gray'
 		}
@@ -149,8 +168,6 @@ $(document).ready(function () {
 		};
 
 	}
-
-
 
 	//highlights a country when clicked or hovered over
 	function highlightFeature(e) {
@@ -206,9 +223,7 @@ $(document).ready(function () {
 						// add institutions json file objects  to the geojson at runtime to make the map automated 
 						// with institutions and country properties
 						json.features[i].properties.institutions = json2[j];
-						json.features[i].properties.country = j;
-					
-						
+						json.features[i].properties.country = j;	
 					}
 				
 				}

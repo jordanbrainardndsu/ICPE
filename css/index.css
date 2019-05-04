@@ -1,0 +1,42 @@
+img.stragatic{
+    width: 270px;
+    height: 300px;
+    margin-top:50px;
+}
+
+img.Spo{
+    width: 250px;
+    height: 280px;
+    margin-top:50px;
+}
+
+
+@media (max-width: 576px){
+#cont {
+    max-width: 540px;
+    width: 100%;
+    padding-right: 11px;
+    padding-left: 159px;
+    margin-right: auto;
+    margin-left: auto;
+}
+}
+
+
+
+.title{
+
+    font-size: 50px;
+}
+
+
+@media (min-width: 576px){
+
+    .container {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
