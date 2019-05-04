@@ -1,0 +1,99 @@
+
+       [{
+                "type": "StrategicPartner", "name": "fanta", "mainUrl": "https://www.fanta.com/", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/fanta.png"
+            },
+    
+            {
+                "type": "Sponsor", "name": "google", "mainUrl": "https://www.google.com/",
+                "secondUrl": "https://www.ndsu.edu/physics/society_of_physics_students_sps/",
+                "logoUrl": "images/google.jpg"
+            },
+    
+            {
+                "type": "StrategicPartner", "name": "nbc", "mainUrl": "https://www.nbc.com/", "secondUrl": "",
+                "logoUrl": "images/nbc.png"
+            },
+    
+            {
+                "type": "Sponsor", "name": "pixer", "mainUrl": "https://www.pixar.com/", "secondUrl": "https://acm-ndsu.github.io/",
+                "logoUrl": "images/pixar.png"
+            },
+
+
+            
+            {
+                "type": "Sponsor", "name": "pixer", "mainUrl": "https://www.pixar.com/", "secondUrl": "https://acm-ndsu.github.io/",
+                "logoUrl": "images/pixar.png"
+            },
+
+            
+            {
+                "type": "Sponsor", "name": "pixer", "mainUrl": "https://www.pixar.com/", "secondUrl": "https://acm-ndsu.github.io/",
+                "logoUrl": "images/pixar.png"
+            },
+
+    
+
+             {
+                "type": "Sponsor", "name": "pixer", "mainUrl": "https://www.pixar.com/", "secondUrl": "https://acm-ndsu.github.io/",
+                "logoUrl": "images/pixar.png"
+            },
+
+    
+            {
+                "type": "Sponsor",
+                "name": "pixer",
+                "mainUrl": "https://www.pixar.com/",
+                "secondUrl": "https://acm-ndsu.github.io/",
+                "logoUrl": "images/pixar.png"
+            },
+
+    
+        
+    
+            {
+                "type": "Sponsor", "name": "amazon", "mainUrl": "https://www.amazon.com/", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/amazon.png"
+            },
+    
+            {
+                "type": "StrategicPartner", "name": "crush", "mainUrl": "https://www.drpeppersnapplegroup.com/brands/crush", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/crush.gif"
+            },
+    
+            {
+                "type": "Sponsor", "name": "dominos", "mainUrl": "https://www.dominos.com/en/?lang=en", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/domino.png"
+            },
+            {
+                "type": "StrategicPartner", "name": "disney", "mainUrl": "https://disneyworld.disney.go.com/", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/disney.png"
+            },
+    
+            {
+                "type": "Sponsor", "name": "puma", "mainUrl": "https://us.puma.com/en/us/home", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/puma.png"
+            },
+    
+    
+            {
+                "type": "StrategicPartner", "name": "dreamwork", "mainUrl": "https://www.dreamworksanimation.com/", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/dreamwork.jpg"
+            },
+    
+            {
+                "type": "Sponsor", "name": "marvel", "mainUrl": "https://www.marvel.com/movies", "secondUrl":
+                    "https://www.ndsu.edu/about", "logoUrl": "images/img.jpg"
+            }
+         
+            ] 
+        
+        
+    
+            
+    
+            
+
+
+
